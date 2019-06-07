@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header.html :: header}">
+<meta charset="UTF-8">
+<title id="pageTitle">Update Promo Code</title>
+</head>
+<body>
+	<div th:replace="~{fragments/admin-navbar.html :: navbar}"></div>
+	<div class="wrapper">
+		<div th:replace="~{fragments/admin-sidebar.html :: sidebar}"></div>
+				<div class="container">
+			<main class="login-form">
+			<div class="cotainer">
+				<div class="row justify-content-center">
+					<div class="col-md-8">
+						<div class="card">
+							<div class="card-header stu_reg">Update Promo Code</div>
+							<div class="card-body">
+								<form th:action="@{/update/promo-code}" th:object="${promoCode}" method="post">
+									<div class="form-group row">
+										<label for="dept_code"
+											class="col-md-4 col-form-label text-md-right">Prome Code</label>
+										<div class="col-md-6">
+											<input type="text" id="dept_code" class="form-control"
+												name="dept_code" th:field="*{promoCodeName}" required autofocus>
+										</div>
+									</div>
+
+									<div class="col-md-6 offset-md-4">
+										<button type="submit" class="btn btn-primary">Submit</button>
+									</div>
+							</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			</main>
+		</div>
+		
+	</div>
+	<div th:replace="~{fragments/footer.html :: footer}"></div>
+</body>
+</html>

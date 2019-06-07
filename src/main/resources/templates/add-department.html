@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header.html :: header}">
+<title id="pageTitle">Add Department</title>
+</head>
+<body>
+	<div class="wrapper">
+		<div th:replace="~{fragments/admin-sidebar.html :: sidebar}"></div>
+		<div th:replace="~{fragments/admin-navbar.html :: navbar}"></div>
+		<div class="container">
+			<main class="login-form">
+			<div class="cotainer">
+				<div class="row justify-content-center">
+					<div class="col-md-8">
+						<div class="card">
+							<div class="card-header stu_reg">Add Department</div>
+							<div class="card-body">
+								<form th:action="@{/add/department}" th:object="${department}" method="post">
+									<div class="form-group row">
+										<label for="dept_code"
+											class="col-md-4 col-form-label text-md-right">Department Code</label>
+										<div class="col-md-6">
+											<input type="text" id="dept_code" class="form-control"
+												name="dept_code" th:field="*{departmentCode}" placeholder="CSE, EEE" required autofocus>
+										</div>
+									</div>
+
+									<div class="form-group row">
+										<label for="dept_name"
+											class="col-md-4 col-form-label text-md-right">Department Name</label>
+										<div class="col-md-6">
+											<input type="text" id="dept_name" th:field="*{departmentName}" placeholder="Computer Seince and Engineering" class="form-control"
+												name="dept_name" required>
+										</div>
+									</div>
+
+									<div class="col-md-6 offset-md-4">
+										<button type="submit" class="btn btn-primary">Submit</button>
+									</div>
+							</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			</main>
+		</div>
+
+		<div th:replace="~{fragments/footer.html :: footer}"></div>
+	</div>
+</body>
+</html>

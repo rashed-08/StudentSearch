@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header.html :: header}">
+<title id="pageTitle">Update Student</title>
+</head>
+<body>
+	<div class="wrapper">
+		<div th:replace="~{fragments/admin-sidebar.html :: sidebar}"></div>
+		<div th:replace="~{fragments/admin-navbar.html :: navbar}"></div>
+		<div class="container">
+			<div th:if="updated != null">
+				<button th:text="${updated}" id="alert" class="btn btn-success alert"></button>
+			</div>
+			<main class="login-form">
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<div class="card">
+						<div class="card-header stu_reg">Update Student</div>
+						<div class="card-body">
+							<form class="m-5" th:action="@{/update/student}"
+								th:object="${student}" method="post">
+								<fieldset>
+									<!-- Text input-->
+									<div class="form-group row">
+										<label class="col-md-4 col-form-label text-md-right"
+											for="username">Username</label>
+										<div class="col-md-6">
+											<input id="username" name="username"
+												th:value="${student.username}" type="text"
+												th:field="*{username}" class="form-control input-md">
+
+										</div>
+									</div>
+
+									<!-- Text input-->
+									<div class="form-group row">
+										<label class="col-md-4 col-form-label text-md-right"
+											for="first_name">First name</label>
+										<div class="col-md-6">
+											<input id="first_name" name="first_name" type="text"
+												th:field="*{firstName}" class="form-control input-md">
+
+										</div>
+									</div>
+
+									<!-- Text input-->
+									<div class="form-group row">
+										<label class="col-md-4 col-form-label text-md-right"
+											for="last_name">Last name</label>
+										<div class="col-md-6">
+											<input id="last_name" name="last_name" type="text"
+												th:field="*{lastName}" class="form-control input-md">
+
+										</div>
+									</div>
+
+									<!-- Text input-->
+									<div class="form-group row">
+										<label class="col-md-4 col-form-label text-md-right"
+											for="email">Email</label>
+										<div class="col-md-6">
+											<input id="email" name="email" type="email"
+												th:field="*{email}" class="form-control input-md">
+
+										</div>
+									</div>
+
+									<!-- Text input-->
+									<div class="form-group row">
+										<label class="col-md-4 col-form-label text-md-right"
+											for="promoCode">Promo Code</label>
+										<div class="col-md-6">
+											<input id="promoCode" name="promoCode" type="text"
+												th:field="*{promoCode}" class="form-control input-md">
+											<div th:if="${promo}">
+												<p class="alert alert-danger" th:text="${promo}"></p>
+											</div>
+										</div>
+									</div>
+
+									<!-- Button (Double) -->
+									<div class="form-group">
+										<label class="col-md-4 control-label" for="submit"></label>
+										<div class="col-md-6 offset-md-4">
+											<button id="update" name="submit" class="btn btn-success">Update</button>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			</main>
+		</div>
+		<div th:replace="~{fragments/footer.html :: footer}"></div>
+	</div>
+</body>
+</html>

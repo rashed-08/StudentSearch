@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<div th:fragment="sidebar">
+		<nav id="sidebar">
+			<div class="sidebar-header">
+				<h3>Admin Panel</h3>
+			</div>
+			<ul class="list-unstyled components">
+
+				<li th:classappend="${#httpServletRequest.getRequestURI() == '/add/department' ? 'active':''}">
+					<a th:href="@{/add/department}">Add Department</a>
+				</li>
+
+				<li ><a th:href="@{/register}">Add Student</a></li>
+
+				<li th:classappend="${#httpServletRequest.getRequestURI() == '/list/promo-code' ? 'active':''}">
+					<a th:href="@{/list/promo-code}">Promo Code List</a>
+				</li>
+
+				<li th:classappend="${#httpServletRequest.getRequestURI() == '/update/promo-code' ? 'active':''}">
+					<a th:href="@{/update/promo-code}">Update Promo Code</a>
+				</li>
+
+				<li th:classappend="${#httpServletRequest.getRequestURI() == '/show/running/student' ? 'active':''}">
+					<a th:href="@{/show/running/student}">Show Running Student</a>
+				</li>
+
+				<li th:classappend="${#httpServletRequest.getRequestURI() == '/show/suspend/student' ? 'active':''}">
+					<a th:href="@{/show/suspend/student}">Show Suspend Student</a>
+				</li>
+
+				<li th:classappend="${#httpServletRequest.getRequestURI() == '/show/promo-code/student' ? 'active':''}">
+					<a th:href="@{/export}">Export Student</a>
+				</li>
+
+				<li th:classappend="${#httpServletRequest.getRequestURI() == '/export/with-profile' ? 'active':''}">
+					<a th:href="@{/export/with-profile}">Export Student with Profile</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>

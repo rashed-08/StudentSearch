@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header.html :: header}">
+<title id="pageTitle">Profile</title>
+</head>
+<body>
+	<div th:replace="fragments/navbar.html :: navbar"></div>
+	<main class="login-form">
+		<div class="cotainer">
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<div th:if="${#strings.isEmpty(profile)}">
+						<div class="card-header">
+							<span>Profile not complete yet.</span><a th:href="@{/edit/profile}" class="btn btn-info"> Back</a>
+						</div>
+					</div>
+					<div class="card" th:if="${profile != null}">
+						<div class="card-header">
+							<a class="btn btn-success" th:href="@{/}"><span
+								th:text="${profile.student}"></span></a>
+						</div>
+						<div class="card-body">
+							<div class="form-group row">
+								<label for="dateOfBirth"
+									class="col-md-4 col-form-label text-md-right">Date of
+									Birth</label> <span class="col-md-6" th:text="${profile.birthDate}"></span>
+							</div>
+							<hr>
+							<div class="form-group row">
+								<label for="sscYear"
+									class="col-md-4 col-form-label text-md-right">School
+									Graduation</label> <span class="col-md-6" th:text="${profile.SSCYear}"></span>
+							</div>
+							<hr>	
+							<div class="form-group row">
+								<label for="hscYear"
+									class="col-md-4 col-form-label text-md-right">College
+									Graduation</label> <span class="col-md-6" th:text="${profile.HSCYear}"></span>
+							</div>
+							<hr>	
+							<div class="form-group row">
+								<label for="departmentName"
+									class="col-md-4 col-form-label text-md-right">Department
+									Name</label> <span class="col-md-6" th:text="${profile.departmentName}"></span>
+							</div>
+							<hr>	
+							<div class="form-group row">
+								<label for="admissionYear"
+									class="col-md-4 col-form-label text-md-right">Admission
+									Year</label> <span class="col-md-6" th:text="${profile.admissionYear}"></span>
+							</div>
+							<hr>	
+							<div class="form-group row">
+								<label for="currentSemester"
+									class="col-md-4 col-form-label text-md-right">Current
+									Semester</label> <span class="col-md-6"
+									th:text="${profile.currentSemester}"></span>
+							</div>
+							<hr>							
+							<div class="form-group row">
+								<a class="btn btn-warning col-md-2 offset-md-4" th:href="@{/home}">Back</a>
+							</div>
+	
+						</div>
+					</div>
+	
+				</div>
+			</div>
+		</div>
+	</main>
+	<div th:replace="~{fragments/footer.html :: footer}"></div>
+</body>
+</html>
+

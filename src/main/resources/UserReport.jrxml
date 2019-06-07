@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="UserReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a035830f-11b3-411c-983d-ee0fb4f5ccca">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="7"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from student;]]>
+	</queryString>
+	<field name="username" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="enabled" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="first_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="last_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="password" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="promo_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="authorities_id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="profile_id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#E7F6E5" backcolor="#39B932" uuid="956ab3a9-5899-418e-b102-0623f345da6b"/>
+				<text><![CDATA[           							StudentSearch]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="20" forecolor="#F9EFEF" backcolor="#3B6D6B" uuid="4f0dac76-6cfa-41a5-ad66-677897ee409c"/>
+				<text><![CDATA[Student Information]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="83" y="0" width="86" height="20" uuid="f551297b-a423-4fc8-8591-f19347c55e2b"/>
+				<box leftPadding="2" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#120404"/>
+					<topPen lineWidth="1.0" lineColor="#120404"/>
+					<leftPen lineWidth="1.0" lineColor="#120404"/>
+					<bottomPen lineWidth="1.0" lineColor="#120404"/>
+					<rightPen lineWidth="1.0" lineColor="#120404"/>
+				</box>
+				<text><![CDATA[First Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="0" width="80" height="20" uuid="32b36d56-a19d-42b6-a7b9-fc8a37f91338"/>
+				<box leftPadding="2" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#120404"/>
+					<topPen lineWidth="1.0" lineColor="#120404"/>
+					<leftPen lineWidth="1.0" lineColor="#120404"/>
+					<bottomPen lineWidth="1.0" lineColor="#120404"/>
+					<rightPen lineWidth="1.0" lineColor="#120404"/>
+				</box>
+				<text><![CDATA[Promo Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="248" y="0" width="158" height="20" uuid="c06b5423-4199-4fc3-a115-601e4e9ccae3"/>
+				<box leftPadding="2" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#120404"/>
+					<topPen lineWidth="1.0" lineColor="#120404"/>
+					<leftPen lineWidth="1.0" lineColor="#120404"/>
+					<bottomPen lineWidth="1.0" lineColor="#120404"/>
+					<rightPen lineWidth="1.0" lineColor="#120404"/>
+				</box>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="406" y="0" width="69" height="20" uuid="79d2630a-4e79-415a-b01a-b15035eaf869"/>
+				<box leftPadding="2" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#120404"/>
+					<topPen lineWidth="1.0" lineColor="#120404"/>
+					<leftPen lineWidth="1.0" lineColor="#120404"/>
+					<bottomPen lineWidth="1.0" lineColor="#120404"/>
+					<rightPen lineWidth="1.0" lineColor="#120404"/>
+				</box>
+				<text><![CDATA[Running]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="0" width="79" height="20" uuid="763de5c1-50c1-4547-9d73-758e8c7dfabb"/>
+				<box leftPadding="2" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#120404"/>
+					<topPen lineWidth="1.0" lineColor="#120404"/>
+					<leftPen lineWidth="1.0" lineColor="#120404"/>
+					<bottomPen lineWidth="1.0" lineColor="#120404"/>
+					<rightPen lineWidth="1.0" lineColor="#120404"/>
+				</box>
+				<text><![CDATA[Last Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="83" height="20" uuid="d591ec72-1fcb-473d-b164-ec9cd9142d01"/>
+				<box leftPadding="2" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#120404"/>
+					<topPen lineWidth="1.0" lineColor="#120404"/>
+					<leftPen lineWidth="1.0" lineColor="#120404"/>
+					<bottomPen lineWidth="1.0" lineColor="#120404"/>
+					<rightPen lineWidth="1.0" lineColor="#120404"/>
+				</box>
+				<text><![CDATA[Username]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="83" y="0" width="86" height="20" uuid="62a828bf-4e6e-47c3-bcba-60b1c1e11123"/>
+				<box leftPadding="2" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#120404"/>
+					<topPen lineWidth="1.0" lineColor="#120404"/>
+					<leftPen lineWidth="1.0" lineColor="#120404"/>
+					<bottomPen lineWidth="1.0" lineColor="#120404"/>
+					<rightPen lineWidth="1.0" lineColor="#120404"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{first_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="248" y="0" width="158" height="20" uuid="945b2211-1f55-42c4-8074-394bb2b7148d"/>
+				<box leftPadding="2" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#120404"/>
+					<topPen lineWidth="1.0" lineColor="#120404"/>
+					<leftPen lineWidth="1.0" lineColor="#120404"/>
+					<bottomPen lineWidth="1.0" lineColor="#120404"/>
+					<rightPen lineWidth="1.0" lineColor="#120404"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="169" y="0" width="79" height="20" uuid="b3c47c84-9f2e-454b-9e04-cfe259afb235"/>
+				<box leftPadding="2" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#120404"/>
+					<topPen lineWidth="1.0" lineColor="#120404"/>
+					<leftPen lineWidth="1.0" lineColor="#120404"/>
+					<bottomPen lineWidth="1.0" lineColor="#120404"/>
+					<rightPen lineWidth="1.0" lineColor="#120404"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{last_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="406" y="0" width="69" height="20" uuid="bdaf0998-65b8-411e-9882-f4ef1bb64af9"/>
+				<box leftPadding="2" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#120404"/>
+					<topPen lineWidth="1.0" lineColor="#120404"/>
+					<leftPen lineWidth="1.0" lineColor="#120404"/>
+					<bottomPen lineWidth="1.0" lineColor="#120404"/>
+					<rightPen lineWidth="1.0" lineColor="#120404"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{enabled}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="84" height="20" uuid="ee73fe8d-60ee-4299-9aaf-afbffe386fd9"/>
+				<box leftPadding="2" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#120404"/>
+					<topPen lineWidth="1.0" lineColor="#120404"/>
+					<leftPen lineWidth="1.0" lineColor="#120404"/>
+					<bottomPen lineWidth="1.0" lineColor="#120404"/>
+					<rightPen lineWidth="1.0" lineColor="#120404"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{username}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="475" y="0" width="80" height="20" uuid="49ffd279-428a-477a-8ab6-076596f7f2d2"/>
+				<box leftPadding="2" rightPadding="1">
+					<pen lineWidth="1.0" lineColor="#120404"/>
+					<topPen lineWidth="1.0" lineColor="#120404"/>
+					<leftPen lineWidth="1.0" lineColor="#120404"/>
+					<bottomPen lineWidth="1.0" lineColor="#120404"/>
+					<rightPen lineWidth="1.0" lineColor="#120404"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{promo_code}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="0" width="100" height="20" uuid="12d219fb-309e-4fc6-9477-f90d6f0d77ed"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="518" y="0" width="37" height="20" uuid="58322368-8608-4ecc-80d7-bb3241a7f742"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
