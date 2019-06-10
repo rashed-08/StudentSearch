@@ -162,6 +162,7 @@ public class MainController {
 			return viewPage;
 		}
 		viewPage = controllerService.createAdmin(student);
+		System.out.println("The view page: " + viewPage);
 		if (viewPage.equals("admin-register")) {
 			model.addAttribute("promo", "Please contact with adminstrator");
 			viewPage = "admin-register";
@@ -275,17 +276,20 @@ public class MainController {
 		return viewPage;
 	}
 
-	@GetMapping("/department/with/student")
-	public String studentWithDepartment() {
-		List<Student> get = controllerService.getStudentWithDepartment();
-		System.out.println("The size: " + get.size());
-		viewPage = "student-dept";
+	@RequestMapping("/reset/password")
+	public String resetPassword() {
+		System.out.println("Controller is working...");
+		viewPage = "reset";
 		return viewPage;
 	}
-
+	
+/*	@PostMapping("/rest/password")
+	public String submitResetPassword() {
+		return "redirect:/login";
+	}
+*/
 	@GetMapping("/export")
 	public String exportStudentPdf(HttpServletResponse response) throws JRException, IOException, SQLException {
-		System.out.println("We are in exportStudentPdf");
 		controllerService.studentReport(response);
 		viewPage = "all-student";
 		return viewPage;
@@ -293,7 +297,6 @@ public class MainController {
 
 	@GetMapping("/export/with-profile")
 	public String exportStudentProfilePdf(HttpServletResponse response) throws JRException, IOException, SQLException {
-		System.out.println("We are in exportStudentProfilePdf");
 		controllerService.exportStudentProfilePdf(response);
 		viewPage = "all-student";
 		return viewPage;

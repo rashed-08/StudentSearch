@@ -125,23 +125,28 @@ public class ControllerServiceImpl implements ControllerService {
 
 	@Override
 	public String createAdmin(Student student) {
+		Student existingUser = null;
 		if (student.getPromoCode().equals("admin")) {
 			String newUser = student.getUsername();
-			Student existingUser = fetchStudent(newUser);
-			String existingUsername = existingUser.getUsername();
-			if (newUser.equals(existingUsername)) {
-				viewPage = "admin-register";
-			} else {
-				String studentPassword = student.getPassword();
-				String encodedPassword = encoder.encode(studentPassword);
-				student.setPassword(encodedPassword);
-				student.setEnabled(true);
-				Authority authorities = new Authority();
-				authorities.setRole("ROLE_ADMIN");
-				authorities.setUsername(student.getUsername());
-				student.setAuthorities(authorities);
-				studentDaoService.createOrUpdateStudent(student);
-				viewPage = "redirect:/login?=register";				
+			try {
+				existingUser = fetchStudent(newUser);
+				if (existingUser == null) {
+					String studentPassword = student.getPassword();
+					String encodedPassword = encoder.encode(studentPassword);
+					student.setPassword(encodedPassword);
+					student.setEnabled(true);
+					Authority authorities = new Authority();
+					authorities.setRole("ROLE_ADMIN");
+					authorities.setUsername(student.getUsername());
+					student.setAuthorities(authorities);
+					studentDaoService.createOrUpdateStudent(student);
+					viewPage = "redirect:/login?=register";
+					System.out.println("Controller service, test:1 " + viewPage);
+				} else {
+					viewPage = "admin-register";
+				} 
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		} else {
 			viewPage = "admin-register";
@@ -272,8 +277,7 @@ public class ControllerServiceImpl implements ControllerService {
 		JasperExportManager.exportReportToPdfStream(jasperPrint, out);
 		out.flush();
 		out.close();
-		
+
 	}
 
 }
-

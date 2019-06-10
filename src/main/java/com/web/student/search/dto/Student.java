@@ -134,7 +134,7 @@ public class Student {
 	}
 
 	public StudentProfile getProfile() {
-		return profile;
+		return profile; 
 	}
 
 	public void setProfile(StudentProfile profile) {

@@ -5,7 +5,8 @@
 </head>
 <body>
 	<div th:replace="fragments/navbar.html :: navbar"></div>
-	<div class="alert alert-danger" id="alert" th:if="${param.error}">Invalid username or password</div>
+	<div class="alert alert-danger" id="alert" th:if="${param.error}">Invalid
+		username or password</div>
 	<div class="container">
 		<main class="login-form">
 		<div class="cotainer">
@@ -31,13 +32,13 @@
 										<input type="password" id="password" class="form-control"
 											name="password" placeholder="Password" required>
 									</div>
-								</div>
-
+								</div>								
 								<div class="col-md-6 offset-md-4">
 									<button type="submit" class="btn btn-primary">Login</button>
 								</div>
 						</div>
 						</form>
+						
 					</div>
 				</div>
 			</div>
@@ -46,7 +47,7 @@
 	</div>
 
 	<div th:replace="~{fragments/footer.html :: footer}"></div>
-	
+
 </body>
 </html>
 
