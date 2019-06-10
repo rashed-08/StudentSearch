@@ -35,7 +35,6 @@ public class Student {
 	private String email;
 	
 	@NotNull
-	@Size(min=6,max=15, message="Password must be contain more than 6 or less than 15 characters")
 	private String password;
 	
 	@NotNull
