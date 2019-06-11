@@ -64,21 +64,27 @@ public class ControllerServiceImpl implements ControllerService {
 
 		if (student.getPromoCode().equals(fetchPromoCode)) {
 			String newUser = student.getUsername();
-			Student existingUser = fetchStudent(newUser);
-			String existingUsername = existingUser.getUsername();
-			if (existingUsername.equals(newUser)) {
-				viewPage = "exist";
-			} else {
-				String studentPassword = student.getPassword();
-				String encodedPassword = encoder.encode(studentPassword);
-				student.setPassword(encodedPassword);
-				student.setEnabled(true);
-				Authority authorities = new Authority();
-				authorities.setRole("ROLE_USER");
-				authorities.setUsername(student.getUsername());
-				student.setAuthorities(authorities);
-				studentDaoService.createOrUpdateStudent(student);
-				viewPage = "redirect:/login?=register";
+			Student existingUser = null;
+			try {
+				existingUser = fetchStudent(newUser);
+				if (existingUser == null) {
+					String studentPassword = student.getPassword();
+					String encodedPassword = encoder.encode(studentPassword);
+					student.setPassword(encodedPassword);
+					student.setEnabled(true);
+					Authority authorities = new Authority();
+					authorities.setRole("ROLE_USER");
+					authorities.setUsername(student.getUsername());
+					student.setAuthorities(authorities);
+					studentDaoService.createOrUpdateStudent(student);
+					viewPage = "redirect:/login?=register";
+				}
+
+				else {
+					viewPage = "exist";
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		} else {
 			viewPage = "register";
@@ -144,7 +150,7 @@ public class ControllerServiceImpl implements ControllerService {
 					System.out.println("Controller service, test:1 " + viewPage);
 				} else {
 					viewPage = "admin-register";
-				} 
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
