@@ -162,11 +162,14 @@ public class MainController {
 			return viewPage;
 		}
 		viewPage = controllerService.createAdmin(student);
-		System.out.println("The view page: " + viewPage);
-		if (viewPage.equals("admin-register")) {
-			model.addAttribute("promo", "Please contact with adminstrator");
-			viewPage = "admin-register";
-			return viewPage;
+		if (viewPage.equals("register")) {
+			model.addAttribute("promo", "Please contact with tressurer");
+			viewPage = "register";
+		} else if (viewPage.equals("exist")) {
+			model.addAttribute("exist", "Username already exist");
+			viewPage = "register";
+		} else if (viewPage.equals("redirect:/login?=register")) {
+			viewPage = "redirect:/login?=register";
 		}
 		return viewPage;
 	}

@@ -17,26 +17,27 @@ public class Student {
 
 	@Id
 	@NotNull
-	@Size(min = 2, max = 20, message="Username must be contain more than 2 or less than 20 characters")
+	@Size(min = 2, max = 20, message = "Username must be contain more than 2 or less than 20 characters")
 	private String username;
-	
+
 	@NotNull
 	@Column(name = "first_name")
-	@Size(min=2, max=30, message="First name must be contain more than 2 or less than 30 characters")
+	@Size(min = 2, max = 30, message = "First name must be contain more than 2 or less than 30 characters")
 	private String firstName;
-	
+
 	@NotNull
-	@Size(min=2, max=30, message="Last name must be contain more than 2 or less than 30 characters")
+	@Size(min = 2, max = 30, message = "Last name must be contain more than 2 or less than 30 characters")
 	@Column(name = "last_name")
 	private String lastName;
-	
+
 	@NotNull
-	@Email(message="Please provide valid email")
+	@Email(message = "Please provide valid email")
 	private String email;
-	
+
 	@NotNull
+	@Size(min = 2, max = 255)
 	private String password;
-	
+
 	@NotNull
 	@Column(name = "promo_code")
 	private String promoCode;
@@ -134,7 +135,7 @@ public class Student {
 	}
 
 	public StudentProfile getProfile() {
-		return profile; 
+		return profile;
 	}
 
 	public void setProfile(StudentProfile profile) {
