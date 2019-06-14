@@ -162,6 +162,7 @@ public class MainController {
 			return viewPage;
 		}
 		viewPage = controllerService.createAdmin(student);
+		System.out.println("The view page: " + viewPage);
 		if (viewPage.equals("register")) {
 			model.addAttribute("promo", "Please contact with tressurer");
 			viewPage = "register";
