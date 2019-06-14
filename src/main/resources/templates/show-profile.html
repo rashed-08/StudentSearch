@@ -11,7 +11,7 @@
 				<div class="col-md-8">
 					<div th:if="${#strings.isEmpty(profile)}">
 						<div class="card-header">
-							<span>Profile not complete yet.</span><a th:href="@{/edit/profile}" class="btn btn-info"> Back</a>
+							<span>Profile not complete yet.</span><br><a th:href="@{/home}" class="btn btn-info"> Back</a>
 						</div>
 					</div>
 					<div class="card" th:if="${profile != null}">
