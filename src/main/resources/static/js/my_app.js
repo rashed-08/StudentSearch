@@ -1,7 +1,4 @@
 $(document).ready(function() {
-	$('#my_table').DataTable({
-		responsive: true
-	});
 	var table = $('#my_table').DataTable({
 		"sAjaxSource" : "/json/show/all",
 		"sAjaxDataProp" : "",
